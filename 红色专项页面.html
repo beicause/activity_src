@@ -5,31 +5,34 @@
     <title>2021年“挑战杯”红色专项活动...</title>
 <style>
     html{height: 100%;width: 100%}
-    body{height: 100%;width: 100%;background-image: url(auto_55558PICFp4R08.jpg);background-repeat: no-repeat;background-position-y: -35%;background-size: 100% 135%}
+    body{height: 100%;width: 100%}
     div{
         display: flex;
         width: 100%;
         justify-content: center;
         align-items: center;
     }
+    h1{
+
+    }
     .navbar{background-color: crimson;color: white}
-    .navbar:hover{background-color: darkred;}
+    .navbar:hover{background-color: darkred!important;}
     #text{width: 50%;height: 100%}
 </style>
 </head>
 <body>
 
 <div style="height: 15%;background-image: url(2250351_20210123145116889050_0.jpg);background-position: center"></div>
-
+<h1>视频展示</h1>
 <div style="height: 65%">
     <video controls="controls" src="第九套大众广播体操（完整版）.mp4" style="object-fit: cover;height: 100%;width: 50%" ></video>
 </div>
 
 <div style="height: 5%">
     <div style="width: 50%;height: 100%">
-        <div class="navbar" onclick="onclick1()">这是一</div>
-        <div class="navbar">这是二</div>
-        <div class="navbar">这是三</div>
+        <div id="p1" class="navbar" onclick="onclick1()">这是一</div>
+        <div id="p2" class="navbar" onclick="onclick2()">这是二</div>
+        <div id="p3" class="navbar" onclick="onclick3()">这是三</div>
     </div>
 </div>
 
@@ -39,7 +42,22 @@
 
 <script>
     function onclick1(){
-       document.getElementById("text").innerHTML="<div style='background-color: white;height: 100%;width: 100%'>hello world</div>"
+        document.getElementById("p3").style.backgroundColor="crimson"
+        document.getElementById("p2").style.backgroundColor="crimson"
+        document.getElementById("p1").style.backgroundColor="darkred"
+        document.getElementById("text").innerHTML="<div style='background-color: white;height: 100%;width: 100%'>hello world</div>"
+    }
+    function onclick2(){
+        document.getElementById("p3").style.backgroundColor="crimson"
+        document.getElementById("p1").style.backgroundColor="crimson"
+        document.getElementById("p2").style.backgroundColor="darkred"
+        document.getElementById("text").innerHTML="<div style='background-color: white;height: 100%;width: 100%'>hello world</div>"
+    }
+    function onclick3(){
+        document.getElementById("p1").style.backgroundColor="crimson"
+        document.getElementById("p2").style.backgroundColor="crimson"
+        document.getElementById("p3").style.backgroundColor="darkred"
+        document.getElementById("text").innerHTML="<div style='background-color: white;height: 100%;width: 100%'>hello world</div>"
     }
 </script>
 </body>
