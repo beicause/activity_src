@@ -6,11 +6,15 @@
     <style>
         @font-face {font-family: 'cyjianxk2644b0ab1d22fd9';src: url('//cdn.repository.webfont.com/webfonts/nomal/143321/45904/6028d6e2f629d802489e5eb7.gif?r=161682786265');src: url('//cdn.repository.webfont.com/webfonts/nomal/143321/45904/6028d6e2f629d802489e5eb7.gif?r=161682786265?#iefix') format('embedded-opentype'),url('//cdn.repository.webfont.com/webfonts/nomal/143321/45904/6028d6e2f629d802489e5eb7.png?r=161682786265') format('woff2'),url('//cdn.repository.webfont.com/webfonts/nomal/143321/45904/6028d6e2f629d802489e5eb7.bmp?r=161682786265') format('woff'),url('//cdn.repository.webfont.com/webfonts/nomal/143321/45904/6028d6e2f629d802489e5eb7.jpg?r=161682786265') format('truetype');font-weight: normal;font-style: normal;}.css2644b0ab1d22fd9{font-family: 'cyjianxk2644b0ab1d22fd9';}
         @font-face {font-family: 'yuweij2644c74c9222fd9';src: url('//cdn.repository.webfont.com/webfonts/nomal/143321/47064/6028dcadf629d802489e5ec0.gif?r=161684269405');src: url('//cdn.repository.webfont.com/webfonts/nomal/143321/47064/6028dcadf629d802489e5ec0.gif?r=161684269405?#iefix') format('embedded-opentype'),url('//cdn.repository.webfont.com/webfonts/nomal/143321/47064/6028dcadf629d802489e5ec0.png?r=161684269405') format('woff2'),url('//cdn.repository.webfont.com/webfonts/nomal/143321/47064/6028dcadf629d802489e5ec0.bmp?r=161684269405') format('woff'),url('//cdn.repository.webfont.com/webfonts/nomal/143321/47064/6028dcadf629d802489e5ec0.jpg?r=161684269405') format('truetype');font-weight: normal;font-style: normal;}.css2644c74c9222fd9{font-family: 'yuweij2644c74c9222fd9';}
+
         html{
+            height: 100%;
             width: 100%;
         }
+
         body{
             font-family: Tahoma,sans-serif;
+            height: 100%;
             width: 100%;
             background-color: #e3e3e3
         }
@@ -26,7 +30,7 @@
         video{
             object-fit: cover;
             height: 100%;
-            width: 50%
+            width: 50%;
         }
         div.box{
             display: flex;
@@ -37,7 +41,6 @@
         div.text{
             background-color: white;
             width: 100%;
-            height: 250px;
         }
         div.report{
             display: flex;
@@ -48,7 +51,7 @@
             background-color: white;
             border: 1vw solid white;
             width: 50%;
-            height: 700px;
+            height: 100%;
         }
         .navbar{
             display: flex;
@@ -56,7 +59,7 @@
             justify-content: flex-end;
             flex-direction: column;
             width: 100%;
-            height: 35px;
+            height: 100%;
             background-color: crimson;
             color: white
         }
@@ -66,46 +69,59 @@
         #title_bar{
             font-size:200%;
             background-color: rgb(184,25,53);
+            height: 100%;
             color: white;
             width: 85%;
-            height: 100%;
             display: flex;
             align-items: center
         }
         #hr1,#hr2,#hr3{
-            height: 5px;
+            height: 8%;
             width: 40%;
             border: 0;
             margin-bottom: 0;
-            margin-top: 3px;
+            margin-top: 2%;
         }
         #click_text{
             border: 0.2vw solid #999999;
             width: 100%;
-            height: 350px;
+            height: 50%;
+        }
+        @media screen and (max-device-width: 960px){
+            html{
+                height: 50%;
+            }
+            video{
+                width: 100%;
+            }
+            div.report{
+                width: 100%;
+                border: 0;
+            }
+
         }
     </style>
 </head>
 <body>
 
-<div class="box" style="height: 85px;justify-content: left" >
+<div class="box" style="height: 12%;justify-content: left" >
     <img src="title.jpg" style="height: 100%;width: 15%" alt="failed">
     <div class="css2644b0ab1d22fd9" id="title_bar">
         2021年挑战杯红色专项活动
     </div>
 </div>
 
-<div class="box" style="justify-content: left;height: 70px">
+<div class="box" style="justify-content: left;height: 10%">
     <img src="right.png" alt="failed"><span>视频</span>展示
 </div>
 
 <hr/>
 
-<div class="box" style="height: 460px">
+<div class="box" style="height: 65%">
     <video controls="controls" src="video.mp4"></video>
 </div>
 
-<div class="box" style="justify-content: left;height: 70px">
+<div class="box" style="justify-content: left;height: 10%">
     <img src="right.png" alt="failed"><span>调研</span>报告
 </div>
 
@@ -118,7 +134,7 @@
         零这是零零零这是零零零这是零零零这是零零零这是零零零这是零零零这是零零零这是零零零
     </div>
 
-    <div class="box" style="height: 30px">
+    <div class="box" style="height: 5%">
         <div id="li1" class="navbar" onclick="onclick1()" style="background-color: brown">
             这是一<hr id="hr1" style="background-color: black"/>
         </div>
