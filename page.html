@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>这是标题</title>
     <style>
         @font-face {font-family: 'cyjianxk2644b0ab1d22fd9';src: url('//cdn.repository.webfont.com/webfonts/nomal/143321/45904/6028d6e2f629d802489e5eb7.gif?r=161682786265');src: url('//cdn.repository.webfont.com/webfonts/nomal/143321/45904/6028d6e2f629d802489e5eb7.gif?r=161682786265?#iefix') format('embedded-opentype'),url('//cdn.repository.webfont.com/webfonts/nomal/143321/45904/6028d6e2f629d802489e5eb7.png?r=161682786265') format('woff2'),url('//cdn.repository.webfont.com/webfonts/nomal/143321/45904/6028d6e2f629d802489e5eb7.bmp?r=161682786265') format('woff'),url('//cdn.repository.webfont.com/webfonts/nomal/143321/45904/6028d6e2f629d802489e5eb7.jpg?r=161682786265') format('truetype');font-weight: normal;font-style: normal;}.css2644b0ab1d22fd9{font-family: 'cyjianxk2644b0ab1d22fd9';}
@@ -13,8 +14,9 @@
         }
 
         body{
+            margin: 0;
             font-family: "Microsoft YaHei",sans-serif;
-            font-size: 20px;
+            font-size: 14px;
             height: 100%;
             width: 100%;
             background-color: #e3e3e3
@@ -33,13 +35,57 @@
             height: 100%;
             width: 50%;
         }
-        div.box{
+        div.bar{
+            height: 86px;
+            justify-content: left;
             display: flex;
             width: 100%;
-            justify-content: center;
-            align-items: center;
         }
-        div.text{
+        div.bar_text{
+             font-family: 'cyjianxk2644b0ab1d22fd9';
+             font-size:2em;
+             background-color: rgb(184,25,53);
+             height: 100%;
+             color: white;
+             width: 80%;
+             display: flex;
+             align-items: center
+        }
+        div.header{
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: left;
+            height: 10%;
+        }
+        div.d_video{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 65%;
+        }
+        div.d_navbar{
+            display: flex;
+            width: 100%;
+            height: 25px;
+        }
+        div.navbar{
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            background-color: crimson;
+            color: white
+        }
+        div.navbar:hover{
+            background-color: brown!important;
+        }
+        p.text{
+            margin-top: 0;
+            text-indent: 2em;
             background-color: white;
             width: 100%;
         }
@@ -50,114 +96,99 @@
             justify-content:flex-start;
             margin: auto;
             background-color: white;
-            border: 1vw solid white;
+            border: 1.5vw solid white;
             width: 50%;
             height: 100%;
         }
-        .navbar{
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            flex-direction: column;
-            width: 100%;
-            height: 100%;
-            background-color: crimson;
-            color: white
-        }
-        .navbar:hover{
-            background-color: brown!important;
-        }
-        #title_bar{
-            font-size:200%;
-            background-color: rgb(184,25,53);
-            height: 100%;
-            color: white;
-            width: 85%;
-            display: flex;
-            align-items: center
-        }
+
         #hr1,#hr2,#hr3{
-            height: 8%;
+            height: 3px;
             width: 40%;
             border: 0;
             margin-bottom: 0;
-            margin-top: 2%;
         }
         #click_text{
-            border: 0.2vw solid #999999;
+            border: 2px solid #999999;
             width: 100%;
-            height: 50%;
+            background-color: white;
         }
         @media screen and (max-device-width: 480px){
             html{
-                height: 50%;
+                width: 98.5vw;
+            }
+            div.bar{
+                height: 66px;
+            }
+            div.bar_text{
+                 font-size: 1.6em;
             }
             video{
-                width: 100%;
-            }
-            div.report{
-                width: 100%;
-                border: 0;
+                width: 95%;
             }
 
+            div.report{
+                width: 95%;
+            }
         }
     </style>
 </head>
 <body>
 
-<div class="box" style="height: 12%;justify-content: left" >
-    <img src="title.jpg" style="height: 100%;width: 15%" alt="failed">
-    <div class="css2644b0ab1d22fd9" id="title_bar">
+<div class="bar" >
+    <img src="title.jpg" style="height: 100%;width: 20%" alt="failed">
+    <div class="bar_text">
         2021年挑战杯红色专项活动
     </div>
 </div>
 
-<div class="box" style="justify-content: left;height: 10%">
+<div class="header">
     <img src="right.png" alt="failed"><span>视频</span>展示
 </div>
 
 <hr/>
 
-<div class="box" style="height: 65%">
+<div class="d_video">
     <video controls="controls" src="video.mp4"></video>
 </div>
 
-<div class="box" style="justify-content: left;height: 10%">
+<div class="header">
     <img src="right.png" alt="failed"><span>调研</span>报告
 </div>
 
 <hr/>
 
 <div class="report">
+    <p class="text">
+        JavaScript 是 Web 的编程语言。
+        所有现代的 HTML 页面都使用 JavaScript。
+        JavaScript 非常容易学。
+        本教程将教你学习从初级到高级 JavaScript 知识。
+    </p>
 
-    <div class="text">
-        这是零零零这是零零零这是零零零这是零零零这是零零零这是零零零这是零零零这是零零零这是零零零这是零零
-        零这是零零零这是零零零这是零零零这是零零零这是零零零这是零零零这是零零零这是零零零
-    </div>
-
-    <div class="box" style="height: 5%">
+    <div class="d_navbar">
         <div id="li1" class="navbar" onclick="onclick1()" style="background-color: brown">
-            这是一<hr id="hr1" style="background-color: black"/>
+            section one<hr id="hr1" style="background-color: black"/>
         </div>
+
         <div id="li2" class="navbar" onclick="onclick2()">
-            这是二<hr id="hr2"/>
+            section two<hr id="hr2"/>
         </div>
+
         <div id="li3" class="navbar" onclick="onclick3()">
-            这是三<hr id="hr3"/>
+            section three<hr id="hr3"/>
         </div>
     </div>
-
 
     <div id="click_text">
-        <div style='background-color: white;height: 100%;width: 100%'>这是一这是一</div>
+        <p class="text">这是一31省区市昨日本地确诊零新增，16例确诊为境外输入人民资讯发布时间：02-1608:32人民网人民科技官方帐号2月15日0—24时，31个省（自治区、直辖市）和新疆生产建设兵团报告新增确诊病例16例，均为境外输入病例（广东8例，上海5例，陕西2例，四川1例）；无新增死亡病例；无新增疑似病例。 当日新增治愈出院病例48例，解除医学观察的密切接触者828人，重症病例较前一日减少1例境外输入现有确诊病例234例（其中重症病例2例），现有疑似病例1例。累计确诊病例4885例，累计治愈出院病例4651例，无死亡病例。 截至2月15日24时，据31个省（自治区、直辖市）和新疆生产建设兵团报告，现有确诊病例605例（其中重症病例10例），累计治愈出院病例84547例，累计死亡病例4636例，累计报告确诊病例89788例，现有疑似病例1例。累计追踪到密切接触者974607人，尚在医学观察的密切接触者9643人。31个省（自治区、直辖市）和新疆生产建设兵团报告新增无症状感染者11例（均为境外输入）；当日转为确诊病例2例（均为境外输入）；当日解除医学观察18例（境外输入6例）；尚在医学观察无症状感染者387例（境外输入286例）累计收到港澳台地区通报确诊病例11773例。其中，香港特别行政区10788例（出院10207例，死亡193例），澳门特别行政区48例（出院46例），台湾地区937例（出院859例，死亡9例）。 评论列表向防疫抗疫工作人员致敬！ 这是新年最好的礼物，中国加油！很欣慰，大家辛苦了！太棒了，春暖花开希望一直保持下去,一个人异地过春节是真不太舒服!没有更多啦作者最新文章津味相声致敬白衣天使新年新愿景！一起来看新兵的新年愿望2种行为最容易惹上“节日病”相关文章零新增！北京连续17天无本地确诊病例 治愈出院1例最新数据显示：已连续7天无新增本土病例2月14日山东最新疫情通报
+            刚刚，石家庄通报这些最新信息防疫访‘岗’”系列报道⑤严防输入，共盼春来这是一</p>
     </div>
 
-
-    <div class="text">
+    <p class="text">
         这是四四四四四这是四四四四四这是四四四四四这是四四四四四
-        这是四四四四四这是四四四四四这是四四四四四这是四四四四四这是四四四四四这是四四四四四这是四四四四四这是四四四四四这是四四四四四
-    </div>
-
+        这是四四四四四这是四四四四四这是四四四四四这是四四四四四31省区市昨日本地确诊零新增，16例确诊为境外输入人民资讯发布时间：02-1608:32人民网人民科技官方帐号2月15日0—24时，31个省（自治区、直辖市）和新疆生产建设兵团报告新增确诊病例16例，均为境外输入病例（广东8例，上海5例，陕西2例，四川1例）；无新增死亡病例；无新增疑似病例。 当日新增治愈出院病例48例，解除医学观察的密切接触者828人，重症病例较前一日减少1例境外输入现有确诊病例234例（其中重症病例2例），现有疑似病例1例。累计确诊病例4885例，累计治愈出院病例4651例，无死亡病例。 截至2月15日24时，据31个省（自治区、直辖市）和新疆生产建设兵团报告，现有确诊病例605例（其中重症病例10例），累计治愈出院病例84547例，累计死亡病例4636例，累计报告确诊病例89788例，现有疑似病例1例。累计追踪到密切接触者974607人，尚在医学观察的密切接触者9643人。31个省（自治区、直辖市）和新疆生产建设兵团报告新增无症状感染者11例（均为境外输入）；当日转为确诊病例2例（均为境外输入）；当日解除医学观察18例（境外输入6例）；尚在医学观察无症状感染者387例（境外输入286例）累计收到港澳台地区通报确诊病例11773例。其中，香港特别行政区10788例（出院10207例，死亡193例），澳门特别行政区48例（出院46例），台湾地区937例（出院859例，死亡9例）。 评论列表向防疫抗疫工作人员致敬！ 这是新年最好的礼物，中国加油！很欣慰，大家辛苦了！太棒了，春暖花开希望一直保持下去,一个人异地过春节是真不太舒服!没有更多啦作者最新文章津味相声致敬白衣天使新年新愿景！一起来看新兵的新年愿望2种行为最容易惹上“节日病”相关文章零新增！北京连续17天无本地确诊病例 治愈出院1例最新数据显示：已连续7天无新增本土病例2月14日山东最新疫情通报
+        刚刚，石家庄通报这些最新信息防疫访‘岗’”系列报道⑤严防输入，共盼春来这是四四四四四这是四四四四四这是四四四四四这是四四四四四这是四四四四四
+    </p>
 </div>
 <script>
     function onclick1(){
@@ -168,7 +199,7 @@
         document.getElementById("hr3").style.backgroundColor="crimson"
         document.getElementById("hr1").style.backgroundColor="black"
         document.getElementById("click_text").innerHTML="" +
-            "<div style='background-color: white;height: 100%;width: 100%'>这是一这是一</div>"
+            "<p class='text'>yi31省区市昨日本地确诊零新增，16例确诊为境外输入人民资讯发布时间：02-1608:32人民网人民科技官方帐号2月15日0—24时，31个省（自治区、直辖市）和新疆生产建设兵团报告新增确诊病例16例，均为境外输入病例（广东8例，上海5例，陕西2例，四川1例）；无新增死亡病例；无新增疑似病例。 当日新增治愈出院病例48例，解除医学观察的密切接触者828人，重症病例较前一日减少1例境外输入现有确诊病例234例（其中重症病例2例），现有疑似病例1例。累计确诊病例4885例，累计治愈出院病例4651例，无死亡病例。 截至2月15日24时，据31个省（自治区、直辖市）和新疆生产建设兵团报告，现有确诊病例605例（其中重症病例10例），累计治愈出院病例84547例，累计死亡病例4636例，累计报告确诊病例89788例，现有疑似病例1例。累计追踪到密切接触者974607人，尚在医学观察的密切接触者9643人。31个省（自治区、直辖市）和新疆生产建设兵团报告新增无症状感染者11例（均为境外输入）；当日转为确诊病例2例（均为境外输入）；当日解除医学观察18例（境外输入6例）；尚在医学观察无症状感染者387例（境外输入286例）累计收到港澳台地区通报确诊病例11773例。其中，香港特别行政区10788例（出院10207例，死亡193例），澳门特别行政区48例（出院46例），台湾地区937例（出院859例，死亡9例）。 评论列表向防疫抗疫工作人员致敬！ 这是新年最好的礼物，中国加油！很欣慰，大家辛苦了！太棒了，春暖花开希望一直保持下去,一个人异地过春节是真不太舒服!没有更多啦作者最新文章津味相声致敬白衣天使新年新愿景！一起来看新兵的新年愿望2种行为最容易惹上“节日病”相关文章零新增！北京连续17天无本地确诊病例 治愈出院1例最新数据显示：已连续7天无新增本土病例2月14日山东最新疫情通报\n刚刚，石家庄通报这些最新信息防疫访‘岗’”系列报道⑤严防输入，共盼春来</p>"
     }
     function onclick2(){
         document.getElementById("li3").style.backgroundColor="crimson"
@@ -178,7 +209,7 @@
         document.getElementById("hr1").style.backgroundColor="crimson"
         document.getElementById("hr2").style.backgroundColor="black"
         document.getElementById("click_text").innerHTML="" +
-            "<div style='background-color: white;height: 100%;width: 100%'>这是二这是二</div>"
+            "<p class='text'>这是二31省区市昨日本地确诊零新增，16例确诊为境外输入人民资讯发布时间：02-1608:32人民网人民科技官方帐号2月15日0—24时，31个省（自治区、直辖市）和新疆生产建设兵团报告新增确诊病例16例，均为境外输入病例（广东8例，上海5例，陕西2例，四川1例）；无新增死亡病例；无新增疑似病例。 当日新增治愈出院病例48例，解除医学观察的密切接触者828人，重症病例较前一日减少1例境外输入现有确诊病例234例（其中重症病例2例），现有疑似病例1例。累计确诊病例4885例，累计治愈出院病例4651例，无死亡病例。 截至2月15日24时，据31个省（自治区、直辖市）和新疆生产建设兵团报告，现有确诊病例605例（其中重症病例10例），累计治愈出院病例84547例，累计死亡病例4636例，累计报告确诊病例89788例，现有疑似病例1例。累计追踪到密切接触者974607人，尚在医学观察的密切接触者9643人。31个省（自治区、直辖市）和新疆生产建设兵团报告新增无症状感染者11例（均为境外输入）；当日转为确诊病例2例（均为境外输入）；当日解除医学观察18例（境外输入6例）；尚在医学观察无症状感染者387例（境外输入286例）累计收到港澳台地区通报确诊病例11773例。其中，香港特别行政区10788例（出院10207例，死亡193例），澳门特别行政区48例（出院46例），台湾地区937例（出院859例，死亡9例）。 评论列表向防疫抗疫工作人员致敬！ 这是新年最好的礼物，中国加油！很欣慰，大家辛苦了！太棒了，春暖花开希望一直保持下去,一个人异地过春节是真不太舒服!没有更多啦作者最新文章津味相声致敬白衣天使新年新愿景！一起来看新兵的新年愿望2种行为最容易惹上“节日病”相关文章零新增！北京连续17天无本地确诊病例 治愈出院1例最新数据显示：已连续7天无新增本土病例2月14日山东最新疫情通报\n刚刚，石家庄通报这些最新信息防疫访‘岗’”系列报道⑤严防输入，共盼春来这是二</p>"
     }
     function onclick3(){
         document.getElementById("li1").style.backgroundColor="crimson"
@@ -188,7 +219,7 @@
         document.getElementById("hr1").style.backgroundColor="crimson"
         document.getElementById("hr3").style.backgroundColor="black"
         document.getElementById("click_text").innerHTML="" +
-            "<div style='background-color: white;height: 100%;width: 100%'>这是三这是三</div>"
+            "<p class='text'>31省区市昨日本地确诊零新增，16例确诊为境外输入人民资讯发布时间：02-1608:32人民网人民科技官方帐号2月15日0—24时，31个省（自治区、直辖市）和新疆生产建设兵团报告新增确诊病例16例，均为境外输入病例（广东8例，上海5例，陕西2例，四川1例）；无新增死亡病例；无新增疑似病例。 当日新增治愈出院病例48例，解除医学观察的密切接触者828人，重症病例较前一日减少1例境外输入现有确诊病例234例（其中重症病例2例），现有疑似病例1例。累计确诊病例4885例，累计治愈出院病例4651例，无死亡病例。 截至2月15日24时，据31个省（自治区、直辖市）和新疆生产建设兵团报告，现有确诊病例605例（其中重症病例10例），累计治愈出院病例84547例，累计死亡病例4636例，累计报告确诊病例89788例，现有疑似病例1例。累计追踪到密切接触者974607人，尚在医学观察的密切接触者9643人。31个省（自治区、直辖市）和新疆生产建设兵团报告新增无症状感染者11例（均为境外输入）；当日转为确诊病例2例（均为境外输入）；当日解除医学观察18例（境外输入6例）；尚在医学观察无症状感染者387例（境外输入286例）累计收到港澳台地区通报确诊病例11773例。其中，香港特别行政区10788例（出院10207例，死亡193例），澳门特别行政区48例（出院46例），台湾地区937例（出院859例，死亡9例）。 评论列表向防疫抗疫工作人员致敬！ 这是新年最好的礼物，中国加油！很欣慰，大家辛苦了！太棒了，春暖花开希望一直保持下去,一个人异地过春节是真不太舒服!没有更多啦作者最新文章津味相声致敬白衣天使新年新愿景！一起来看新兵的新年愿望2种行为最容易惹上“节日病”相关文章零新增！北京连续17天无本地确诊病例 治愈出院1例最新数据显示：已连续7天无新增本土病例2月14日山东最新疫情通报\n刚刚，石家庄通报这些最新信息防疫访‘岗’”系列报道⑤严防输入，共盼春来这是三</p>"
     }
 </script>
 </body>
