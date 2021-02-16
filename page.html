@@ -13,9 +13,9 @@
     <script>
         document.documentElement.style.overflow="hidden"
         window.addEventListener("load", function() {
-            document.documentElement.style.overflow="visible"
+            setTimeout(function (){document.documentElement.style.overflow="visible";
             const wrapper = document.getElementById("wrapper");
-            document.body.removeChild(wrapper);
+            document.body.removeChild(wrapper)},2000)
         });
     </script>
     <style>
