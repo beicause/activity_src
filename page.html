@@ -4,15 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>这是标题</title>
-    <script>
-
-        document.documentElement.style.overflow="hidden"
-        window.addEventListener("load", function() {
-            setTimeout(function (){document.documentElement.style.overflow="visible";
-            const wrapper = document.getElementById("wrapper");
-            document.body.removeChild(wrapper)},1500)
-        });
-    </script>
     <style>
         @font-face {
             font-family: hwxk;
@@ -23,27 +14,17 @@
             src: url("https://beicause.github.io/activity_src/ywsfxsjk.ttf") format("truetype");
         }
         @keyframes loading {
-            0%,40%,100%{
-                transform: scaleY(0.4);
-                -webkit-transform: scaleY(0.4);
-            }
-            20%{
-                transform: scaleY(1);
-                -webkit-transform: scaleY(1);
-            }
+            0%,40%,100%{transform: scaleY(0.4);-webkit-transform: scaleY(0.4);}
+            20%{transform: scaleY(1);-webkit-transform: scaleY(1);}
         }
         @-webkit-keyframes loading {
-            0%,40%,100%{
-                -webkit-transform: scaleY(0.4);
-            }
-            20%{
-                -webkit-transform: scaleY(1);
-            }
+            0%,40%,100%{-webkit-transform: scaleY(0.4);}
+            20%{-webkit-transform: scaleY(1);}
         }
         #wrapper{
             display: flex;
-            width: 100vw;
-            height: 100vh;
+            width: 50%;
+            height: 470px;
             background-color: white;
             align-items: center;
             justify-content: center;
@@ -59,15 +40,8 @@
             -webkit-animation:loading 1.2s infinite ease-in-out;
             animation: loading 1.2s infinite ease-in-out;
         }
-
-        html{
-            width: 100%;
-        }
+        html{width: 100%}
         body{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
             margin: 0;
             font-family: "Microsoft YaHei",sans-serif;
             font-size: 14px;
@@ -76,9 +50,9 @@
         }
         span{
             font-family: "ywsfxsjk";
-             text-indent: 1em;
-             color: crimson;
-             font-size: 3em;
+            text-indent: 1em;
+            color: crimson;
+            font-size: 3em;
         }
         hr{
             margin-top: 0;
@@ -110,7 +84,6 @@
              align-items: center
         }
         div.header{
-
             display: flex;
             align-items: center;
             margin-top: 5px;
@@ -119,6 +92,7 @@
             justify-content: left;
             height: 10%;
         }
+
         div.d_navbar{
             display: flex;
             width: 100%;
@@ -144,6 +118,7 @@
             width: 100%;
         }
         div.report{
+            margin: 0 auto;
             display: flex;
             flex-direction: column;
             align-items:center;
@@ -158,6 +133,11 @@
             border: 0;
             margin-bottom: 0;
         }
+        #d_video{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+        }
         #click_text{
             border: 2px solid #999999;
             width: 100%;
@@ -170,20 +150,12 @@
             div.header{height: 30px;}
             div.bar{height: 60px;}
             div.bar_text{font-size: 1.6em;width: 80%;}
-            video{height: 210px;width: 95%;}
+            #wrapper,video{height: 210px;width: 95%;}
             div.report{width: 95%;}
         }
     </style>
 </head>
 <body>
-
-<div id="wrapper">
-    <div class="loader1"></div>
-    <div class="loader2"></div>
-    <div class="loader3"></div>
-    <div class="loader4"></div>
-    <div class="loader5"></div>
-</div>
 
 <div class="bar" >
     <img class="bar_img" src="https://beicause.github.io/activity_src/title.jpg" alt="failed">
@@ -198,7 +170,25 @@
 
 <hr/>
 
-<video controls="controls" src="https://beicause.github.io/activity_src/video.mp4" preload="auto"></video>
+<div id="d_video">
+</div>
+<script>
+    document.getElementById("d_video").innerHTML="<div id=\"wrapper\">\n" +
+        "    <div class=\"loader1\"></div>\n" +
+        "    <div class=\"loader2\"></div>\n" +
+        "    <div class=\"loader3\"></div>\n" +
+        "    <div class=\"loader4\"></div>\n" +
+        "    <div class=\"loader5\"></div>\n" +
+        "</div>"+
+        "<video id=\"video\" controls=\"controls\" src=\"https://beicause.github.io/activity_src/video.mp4\" preload=\"auto\"></video>"
+    document.getElementById("video").style.display="none"
+    window.addEventListener("load", function() {
+        setTimeout(function (){
+            document.getElementById("video").style.display="block"
+            document.getElementById("d_video").removeChild(document.getElementById("wrapper"))
+        },1500)
+    })
+</script>
 
 <div class="header">
     <img src="https://beicause.github.io/activity_src/right.png" alt="failed"><span>调研</span>报告
@@ -242,6 +232,7 @@
         刚刚，石家庄通报这些最新信息防疫访‘岗’”系列报道
     </p>
 </div>
+
 <script>
     function _click(num){
         document.getElementById("li1").style.backgroundColor="crimson"
