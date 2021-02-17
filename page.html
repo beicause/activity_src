@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>这是标题</title>
     <script>
+
         document.documentElement.style.overflow="hidden"
         window.addEventListener("load", function() {
             setTimeout(function (){document.documentElement.style.overflow="visible";
@@ -14,7 +15,7 @@
     </script>
     <style>
         @font-face {
-            font-family: jqjxk;
+            font-family: hwxk;
             src: url("https://beicause.github.io/activity_src/jqjxk.ttf") format("truetype");
         }
         @font-face {
@@ -73,7 +74,8 @@
             width: 100%;
             background-color: #e3e3e3
         }
-        span{font-family: "ywsfxsjk";
+        span{
+            font-family: "ywsfxsjk";
              text-indent: 1em;
              color: crimson;
              font-size: 3em;
@@ -98,7 +100,7 @@
             width: 100%;
         }
         div.bar_text{
-            font-family: "jqjxk";
+             font-family: "hwxk";
              font-size:2em;
              background-color: rgb(184,25,53);
              height: 100%;
@@ -162,32 +164,14 @@
             background-color: white;
         }
         @media screen and (max-device-width: 960px){
-            html{
-                width: 98.5vw;
-            }
-            span{
-                font-size: 2em;
-            }
-            img.bar_img{
-                width: 20%;
-            }
-            div.header{
-                height: 30px;
-            }
-            div.bar{
-                height: 60px;
-            }
-            div.bar_text{
-                font-size: 1.6em;
-                width: 80%;
-            }
-            video{
-                height: 210px;
-                width: 95%;
-            }
-            div.report{
-                width: 95%;
-            }
+            html{width: 98.5vw;}
+            span{font-size: 2em;}
+            img.bar_img{width: 20%;}
+            div.header{height: 30px;}
+            div.bar{height: 60px;}
+            div.bar_text{font-size: 1.6em;width: 80%;}
+            video{height: 210px;width: 95%;}
+            div.report{width: 95%;}
         }
     </style>
 </head>
