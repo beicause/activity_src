@@ -4,12 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>这是标题</title>
-    <script type="text/javascript" src="https://cdn.repository.webfont.com/wwwroot/js/wf/youziku.api.min.js"></script>
-    <script type="text/javascript">
-        $webfont.load("div.bar_text", "2c04a14c64bd48dc9c1db4c5f6f1bcf9", "JQjianxingkai");
-        $webfont.load("span", "d0357f52d14442ee830386bfe991dda5", "yuweij");
-        $webfont.draw();
-    </script>
     <script>
         document.documentElement.style.overflow="hidden"
         window.addEventListener("load", function() {
@@ -19,6 +13,15 @@
         });
     </script>
     <style>
+        @font-face {
+            font-family: JQJXK;
+            src: url("https://beicause.github.io/activity_src/JQJXK.ttf") format("truetype");
+
+        }
+        @font-face {
+            font-family: YWSFXSJT;
+            src: url("https://beicause.github.io/activity_src/YWSFXSJT.ttf") format("truetype");
+        }
         @keyframes loading {
             0%,40%,100%{
                 transform: scaleY(0.4);
@@ -96,6 +99,7 @@
             width: 100%;
         }
         div.bar_text{
+            font-family: JQJXK;
              font-size:2em;
              background-color: rgb(184,25,53);
              height: 100%;
@@ -105,6 +109,7 @@
              align-items: center
         }
         div.header{
+            font-family: YWSFXSJT;
             display: flex;
             align-items: center;
             margin-top: 5px;
