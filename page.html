@@ -188,7 +188,7 @@
         "</div>"+
         "<video id=\"video\" controls=\"controls\" preload=\"auto\"></video>"
     document.getElementById("video").style.display="none"
-    document.getElementById("video").addEventListener("loadstart", function() {
+    document.getElementById("video").addEventListener("canplay", function() {
         setTimeout(function (){
             document.getElementById("video").style.display="block"
             document.getElementById("d_video").removeChild(document.getElementById("wrapper"))
