@@ -196,10 +196,9 @@
         hls.loadSource(video_src)
         hls.attachMedia(video)
     }
-    else if (video.canPlayType('application/vnd.apple.mpegurl')){
-            video.src = video_src
+    else{
+        video.src ="https://beicause.github.io/activity_src/video.mp4"
     }
-
 </script>
 
 <div class="header">
