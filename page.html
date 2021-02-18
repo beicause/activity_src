@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>这是标题</title>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
     <style>
         @font-face {
             font-family: hwxk;
@@ -180,7 +181,7 @@
         "    <div class=\"loader4\"></div>\n" +
         "    <div class=\"loader5\"></div>\n" +
         "</div>"+
-        "<video id=\"video\" controls=\"controls\" src=\"https://beicause.github.io/activity_src/video.mp4\" preload=\"auto\"></video>"
+        "<video id=\"video\" controls=\"controls\" preload=\"auto\"></video>"
     document.getElementById("video").style.display="none"
     window.addEventListener("load", function() {
         setTimeout(function (){
@@ -188,6 +189,17 @@
             document.getElementById("d_video").removeChild(document.getElementById("wrapper"))
         },1500)
     })
+    const video=document.getElementById("video")
+    const video_src="https://beicause.github.io/activity_src/video.m3u8"
+    if(Hls.isSupported){
+        const hls=new Hls()
+        hls.loadSource(video_src)
+        hls.attachMedia(video)
+    }
+    else if (video.canPlayType('application/vnd.apple.mpegurl')){
+            video.src = video_src
+    }
+
 </script>
 
 <div class="header">
