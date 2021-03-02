@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>这是标题</title>
     <script src="https://unpkg.com/vue"></script>
-
     <style>
         @font-face {
             font-family: hwxk;
@@ -35,9 +34,7 @@
         .loader .loader3{-webkit-animation-delay:-1s;animation-delay: -1s}
         .loader .loader4{-webkit-animation-delay:-0.9s;animation-delay: -0.9s}
         .loader .loader5{-webkit-animation-delay:-0.8s;animation-delay: -0.8s}
-        .loader > div:not(.loader1){
-            margin-left: 9px;
-        }
+        .loader > div:not(.loader1){margin-left: 9px}
         .loader > div{
             background-color: crimson;
             width: 10px;
@@ -59,9 +56,6 @@
             color: crimson;
             font-size: 3em;
         }
-        hr{
-            width: 100%;
-        }
         video{
             object-fit: cover;
             height: 470px;
@@ -72,7 +66,7 @@
             height: 100%;
         }
         div.bar{
-            height: 86px;
+            height: 80px;
             justify-content: left;
             display: flex;
             width: 100%;
@@ -102,7 +96,7 @@
             width: 100%;
             height: 25px;
         }
-        div.navbar{
+        div.tab{
             display: flex;
             align-items: center;
             justify-content: flex-end;
@@ -110,18 +104,22 @@
             width: 100%;
             height: 100%;
             background-color: crimson;
-            color: white
+            color: white;
+            user-select: none;
         }
-        div.navbar:hover{
+        div.tab:hover{
             background-color: brown!important;
         }
-        p.text{
+        div.tab_active{
+            background-color: brown;
+        }
+        p{
             margin-top: 0;
             text-indent: 2em;
             background-color: white;
             width: 100%;
         }
-        div.report{
+        div.d_text{
             margin: 0 auto;
             display: flex;
             flex-direction: column;
@@ -131,18 +129,21 @@
             border: 1.5vw solid white;
             width: 50%;
         }
-        #hr1,#hr2,#hr3,#hr4{
+        hr.tab_hr{
             height: 3px;
             width: 40%;
             border: 0;
-            margin-bottom: 0;
+            margin: 0;
         }
-        .d_video{
+        hr.tab_hr_active{
+            background-color: black;
+        }
+        div.d_video{
             display: flex;
             width: 100%;
             justify-content: center;
         }
-        #click_text{
+        div.alt_text{
             border: 2px solid #999999;
             width: 100%;
             background-color: white;
@@ -157,150 +158,124 @@
             .loader,video{height: 210px;width: 95%;}
             .loader > div{width: 6px;height: 60px;}
             .loader > div:not(.loader1){margin-left: 5px}
-            div.report{width: 95%;}
+            div.d_text{width: 95%;}
         }
     </style>
 </head>
 <body>
     <div id="vue_components">
-    <vue-bar></vue-bar>
-    <vue-header header_text1="视频" header_text2="展示"></vue-header>
-    <hr/>
-    <vue-video></vue-video>
-    <vue-header header_text1="调研" header_text2="报告"></vue-header>
-    <hr/>
-<div class="report">
-    <p class="text">
-        JavaScript 是 Web 的编程语言。
-        所有现代的 HTML 页面都使用 JavaScript。
-        JavaScript 非常容易学。
-        辖市）和新疆生产建设兵团报告新增确诊病例16例，均为境外输入病例（广东8例，上海5例，陕西2例，四川1例）；无本教程将教你学习从初级到高级 JavaScript 知识。31省区市昨日本地确诊零新增，16例确诊为境外输入人民资讯发布时间：02-1608:32人民网人民科技官方帐号2月15日0—24时，31个省（自治区、直
-    </p>
-
-    <div class="d_navbar">
-        <div id="li1" class="navbar" onclick="_click(1)" style="background-color: brown">
-            section one<hr id="hr1" style="background-color: black"/>
-        </div>
-
-        <div id="li2" class="navbar" onclick="_click(2)">
-            section two<hr id="hr2"/>
-        </div>
-
-        <div id="li3" class="navbar" onclick="_click(3)">
-            section thre<hr id="hr3"/>
-        </div>
-
-        <div id="li4" class="navbar" onclick="_click(4)">
-            section four<hr id="hr4"/>
-        </div>
+        <vue-bar></vue-bar>
+        <vue-header header_text1="视频" header_text2="展示"></vue-header>
+        <hr/>
+        <vue-video></vue-video>
+        <vue-header header_text1="调研" header_text2="报告"></vue-header>
+        <hr/>
+        <vue-text></vue-text>
     </div>
-
-    <div id="click_text">
-        <p class="text">这是一31省区市昨日本地确诊零新增，16例确诊为境外输入人民资讯发布时间：02-1608:32人民网人民科技官方帐号2月15日0—24时，31个省（自治区、直辖市）和新疆生产建设兵团报告新增确诊病例16例，均为境外输入病例（广东8例，上海5例，陕西2例，四川1例）；无新增死亡病例；无新增疑似病例。 当日新增治愈出院病例48例，解除医学观察的密切接触者828人，重症病例较前一日减少1例境外输入现有确诊病例234例（其中重症病例2例），现有疑似病例1例。累计确诊病例4885例，累计治愈出院病例4651例，无死亡病例。 截至2月15日24时，据31个省（自治区、直辖市）和新疆生产建设兵团报告，现有确诊病例605例（其中重症病例10例），累计治愈出院病例84547例，累计死亡病例4636例，累计报告确诊病例89788例，现有疑似病例1例。累计追踪到密切接触者974607人，尚在医学观察的密切接触者9643人。31个省（自治区、直辖市）和新疆生产建设兵团报告新增无症状感染者11例（均为境外输入）；当日转为确诊病例2例（均为境外输入）；当日解除医学观察18例（境外输入6例）；尚在医学观察无症状感染者387例（境外输入286例）累计收到港澳台地区通报确诊病例11773例。其中，香港特别行政区10788例（出院10207例，死亡193例），澳门特别行政区48例（出院46例），台湾地区937例（出院859例，死亡9例）。 评论列表向防疫抗疫工作人员致敬！ 这是新年最好的礼物，中国加油！很欣慰，大家辛苦了！太棒了，春暖花开希望一直保持下去,一个人异地过春节是真不太舒服!没有更多啦作者最新文章津味相声致敬白衣天使新年新愿景！一起来看新兵的新年愿望2种行为最容易惹上“节日病”相关文章零新增！北京连续17天无本地确诊病例 治愈出院1例最新数据显示：已连续7天无新增本土病例2月14日山东最新疫情通报
-            刚刚，石家庄通报这些最新信息防疫访‘岗’”系列报道⑤严防输入，共盼春来这是一</p>
-    </div>
-    <p class="text">
-        新增死亡病例；无新增疑似病例。 当日新增治愈出院病例48例，解除医学观察的密切接触者828人，重症病例较前一日减少1例境外输入现有确诊病例234例（其中重症病例2例），现有疑似病例1例。累计确诊病例4885例，累计治愈出院病例4651例，无死亡病例。 截至2月15日24时，据31个省（自治区、直辖市）和新疆生产建设兵团报告，现有确诊病例605例（其中重症病例10例），累计治愈出院病例84547例，累计死亡病例4636例，累计报告确诊病例89788例，现有疑似病例1例。累计追踪到密切接触者974607人，尚在医学观察的密切接触者9643人。31个省（自治区、直辖市）和新疆生产建设兵团报告新增无症状感染者11例（均为境外输入）；当日转为确诊病例2例（均为境外输入）；当日解除医学观察18例（境外输入6例）；尚在医学观察无症状感染者387例（境外输入286例）累计收到港澳台地区通报确诊病例11773例。其中，香港特别行政区10788例（出院10207例，死亡193例），澳门特别行政区48例（出院46例），台湾地区937例（出院859例，死亡9例）。 评论列表向防疫抗疫工作人员致敬！ 这是新年最好的礼物，中国加油！很欣慰，大家辛苦了！太棒了，春暖花开希望一直保持下去,一个人异地过春节是真不太舒服!没有更多啦作者最新文章津味相声致敬白衣天使新年新愿景！一起来看新兵的新年愿望2种行为最容易惹上“节日病”相关文章零新增！北京连续17天无本地确诊病例 治愈出院1例最新数据显示：已连续7天无新增本土病例2月14日山东最新疫情通报
-        刚刚，石家庄通报这些最新信息防疫访‘岗’”系列报道
-    </p>
-</div>
-</div>
 <script>
+    const vueBar={
+        data:function (){
+            return{
+                div_bar_class:'bar',
+                bar_img_alt:'failed',
+                bar_img_class:'bar_img',
+                bar_img_src:'https://cdn.jsdelivr.net/gh/beicause/activity_src/title.jpg',
+                bar_text_class:'bar_text',
+                bar_text:'2021年挑战杯红色专项活动'
+            }
+        },
+        template:'<div :class="div_bar_class">' +
+            '    <img :class="bar_img_class" :src="bar_img_src" :alt="bar_img_alt">' +
+            '    <div :class="bar_text_class">{{bar_text}}</div>' +
+            '</div>'
+    }
+    const vueVideo={
+        data:function (){
+            return{
+                div_video_class:'d_video',
+                div_loader_class: 'loader',
+                loaders_class:["loader1","loader2","loader3","loader4","loader5"],
+                video_src:'https://cdn.jsdelivr.net/gh/beicause/activity_src/video.mp4',
+                video_is_canplay:false,
+                video_preload:'auto',
+                video_oncanplay:()=>{setTimeout(()=>this.video_is_canplay=true,1500)}
+            }
+        },
+        template:   '<div :class="div_video_class">' +
+            '    <div :class="div_loader_class" v-if="!video_is_canplay">' +
+            '    <div v-for="loader in loaders_class" :key="loader" :class="loader"></div>' +
+            '    </div>' +
+            '    <video :src="video_src" v-show="video_is_canplay" @canplay="video_oncanplay" preload="video_preload" controls></video>'+
+            '</div>'
+    }
+    const vueHeader={
+        props:['header_text1','header_text2'],
+        data:function (){
+            return{
+                header_class:'header',
+                header_img_src:'https://cdn.jsdelivr.net/gh/beicause/activity_src/right.png',
+                header_img_alt:'failed'
+            }
+        },
+        template:'<div :class="header_class">\n' +
+            '    <img :src="header_img_src" :alt="header_img_alt"><span>{{header_text1}}</span>{{header_text2}}' +
+            '</div>',
+    }
+    const vueNavbar={
+        data:function (){
+            return{
+                vue_navbar_style:{
+                    width:'100%',
+                    display:'flex',
+                    flexDirection:'column',
+                    alignItems:'center',
+                },
+                div_navbar_class:'d_navbar',
+                tab_class:'tab',
+                tab_hr_class:'tab_hr',
+                tab_text:['sss1','sss2','sss3','sss4'],
+                current_tab:'sss1',
+                alt_text_class:'alt_text',
+                alt_text:{
+                    'sss1':'<p>111111111111111111111</p>',
+                    'sss2':'<p>2222222222222222222222222</p>',
+                    'sss3':'<p>333333333333333333333333333333</p>',
+                    'sss4':'<p>444444444444444444444444</p>',
+                }
+            }
+        },
+        template:'<div :style="vue_navbar_style">'+
+            '<div :class="div_navbar_class">' +
+            '    <div :class="[tab_class,{tab_active:current_tab===tab}]" @click="current_tab=tab" v-for="tab in tab_text" :key="tab" > {{tab}}<hr :class="[tab_hr_class,{tab_hr_active:current_tab===tab}]"/></div>' +
+            '</div>' +
+            '<div :class="alt_text_class" v-html="alt_text[current_tab]"></div>' +
+            '</div>',
+    }
+    const vueText={
+        data:function (){
+            return{
+                div_text_class:'d_text',
+                text_class:'text',
+                first_text:'<p>55555555</p>',
+                last_text:'<p>6666666</p>'
+            }
+        },
+        template:'<div :class="div_text_class">' +
+            '    <p v-html="first_text"></p>' +
+            '    <vue-navbar></vue-navbar>' +
+            '    <p v-html="last_text"></p> ' +
+            '</div>',
+        components:{'vue-navbar':vueNavbar},
+    }
     new Vue({
         el:'#vue_components',
         components:{
-            'vue-bar':{
-                data:function (){
-                    return{
-                        div_bar_class:'bar',
-                        bar_img_alt:'failed',
-                        bar_img_class:'bar_img',
-                        bar_img_src:'https://cdn.jsdelivr.net/gh/beicause/activity_src/title.jpg',
-                        bar_text_class:'bar_text',
-                        bar_text:'2021年挑战杯红色专项活动'
-                    }
-                },
-                template:   '<div :class="div_bar_class">' +
-                                '<img :class="bar_img_class" :src="bar_img_src" :alt="bar_img_alt">' +
-                                '<div :class="bar_text_class">{{bar_text}}</div>' +
-                            '</div>'
-            },
-
-            'vue-video':{
-                data:function (){
-                    return{
-                        div_video_class:'d_video',
-                        div_loader_class: 'loader',
-                        loaders_class:["loader1","loader2","loader3","loader4","loader5"],
-                        video_src:'https://cdn.jsdelivr.net/gh/beicause/activity_src/video.mp4',
-                        is_canplay:false,
-                        video_preload:'auto',
-                        on_canplay:()=>{setTimeout(()=>this.is_canplay=true,1500)}
-                    }
-                },
-                template:   '<div :class="div_video_class">' +
-                                '<div :class="div_loader_class" v-if="!is_canplay">' +
-                                '<div v-for="loader in loaders_class" :key="loader" :class="loader"></div>' +
-                                '</div>' +
-                                '<video :src="video_src" v-show="is_canplay" @canplay="on_canplay" preload="video_preload""></video>'+
-                            '</div>'
-                },
-
-            'vue-header':{
-                props:['header_text1','header_text2'],
-                data:function (){
-                    return{
-                        header_class:'header',
-                        header_img_src:'https://cdn.jsdelivr.net/gh/beicause/activity_src/right.png',
-                        header_img_alt:'failed'
-                    }
-                },
-                template:   '<div :class="header_class">\n' +
-                                '<img :src="header_img_src" :alt="header_img_alt"><span>{{header_text1}}</span>{{header_text2}}' +
-                            '</div>'
-            },
-            'vue-navbar':{
-
-            }
+            'vue-bar':vueBar,
+            'vue-video':vueVideo,
+            'vue-header':vueHeader,
+            'vue-text':vueText
         }
     })
-
-    function _click(num){
-        document.getElementById("li1").style.backgroundColor="crimson"
-        document.getElementById("li2").style.backgroundColor="crimson"
-        document.getElementById("li3").style.backgroundColor="crimson"
-        document.getElementById("li4").style.backgroundColor="crimson"
-        document.getElementById("hr1").style.backgroundColor="crimson"
-        document.getElementById("hr2").style.backgroundColor="crimson"
-        document.getElementById("hr3").style.backgroundColor="crimson"
-        document.getElementById("hr4").style.backgroundColor="crimson"
-        switch (num){
-            case 1:
-                document.getElementById("hr1").style.backgroundColor="black"
-                document.getElementById("li1").style.backgroundColor="brown"
-                document.getElementById("click_text").innerHTML="" +
-            "<p class='text'>yi31省区市昨日本地确诊零新增，16例确诊为境外输入人民资讯发布时间：02-1608:32人民网人民科技官方帐号2月15日0—24时，31个省（自治区、直辖市）和新疆生产建设兵团报告新增确诊病例16例，均为境外输入病例（广东8例，上海5例，陕西2例，四川1例）；无新增死亡病例；无新增疑似病例。 当日新增治愈出院病例48例，解除医学观察的密切接触者828人，重症病例较前一日减少1例境外输入现有确诊病例234例（其中重症病例2例），现有疑似病例1例。累计确诊病例4885例，累计治愈出院病例4651例，无死亡病例。 截至2月15日24时，据31个省（自治区、直辖市）和新疆生产建设兵团报告，现有确诊病例605例（其中重症病例10例），累计治愈出院病例84547例，累计死亡病例4636例，累计报告确诊病例89788例，现有疑似病例1例。累计追踪到密切接触者974607人，尚在医学观察的密切接触者9643人。31个省（自治区、直辖市）和新疆生产建设兵团报告新增无症状感染者11例（均为境外输入）；当日转为确诊病例2例（均为境外输入）；当日解除医学观察18例（境外输入6例）；尚在医学观察无症状感染者387例（境外输入286例）累计收到港澳台地区通报确诊病例11773例。其中，香港特别行政区10788例（出院10207例，死亡193例），澳门特别行政区48例（出院46例），台湾地区937例（出院859例，死亡9例）。 评论列表向防疫抗疫工作人员致敬！ 这是新年最好的礼物，中国加油！很欣慰，大家辛苦了！太棒了，春暖花开希望一直保持下去,一个人异地过春节是真不太舒服!没有更多啦作者最新文章津味相声致敬白衣天使新年新愿景！一起来看新兵的新年愿望2种行为最容易惹上“节日病”相关文章零新增！北京连续17天无本地确诊病例 治愈出院1例最新数据显示：已连续7天无新增本土病例2月14日山东最新疫情通报\n刚刚，石家庄通报这些最新信息防疫访‘岗’”系列报道⑤严防输入，共盼春来</p>"
-            break
-            case 2:
-                document.getElementById("li2").style.backgroundColor="brown"
-                document.getElementById("hr2").style.backgroundColor="black"
-                document.getElementById("click_text").innerHTML="" +
-                "<p class='text'>这是二31省区市昨日本地确诊零新增，16例确诊为境外输入人民资讯发布时间：02-1608:32人民网人民科技官方帐号2月15日0—24时，31个省（自治区、直辖市）和新疆生产建设兵团报告新增确诊病例16例，均为境外输入病例（广东8例，上海5例，陕西2例，四川1例）；无新增死亡病例；无新增疑似病例。 当日新增治愈出院病例48例，解除医学观察的密切接触者828人，重症病例较前一日减少1例境外输入现有确诊病例234例（其中重症病例2例），现有疑似病例1例。累计确诊病例4885例，累计治愈出院病例4651例，无死亡病例。 截至2月15日24时，据31个省（自治区、直辖市）和新疆生产建设兵团报告，现有确诊病例605例（其中重症病例10例），累计治愈出院病例84547例，累计死亡病例4636例，累计报告确诊病例89788例，现有疑似病例1例。累计追踪到密切接触者974607人，尚在医学观察的密切接触者9643人。31个省（自治区、直辖市）和新疆生产建设兵团报告新增无症状感染者11例（均为境外输入）；当日转为确诊病例2例（均为境外输入）；当日解除医学观察18例（境外输入6例）；尚在医学观察无症状感染者387例（境外输入286例）累计收到港澳台地区通报确诊病例11773例。其中，香港特别行政区10788例（出院10207例，死亡193例），澳门特别行政区48例（出院46例），台湾地区937例（出院859例，死亡9例）。 评论列表向防疫抗疫工作人员致敬！ 这是新年最好的礼物，中国加油！很欣慰，大家辛苦了！太棒了，春暖花开希望一直保持下去,一个人异地过春节是真不太舒服!没有更多啦作者最新文章津味相声致敬白衣天使新年新愿景！一起来看新兵的新年愿望2种行为最容易惹上“节日病”相关文章零新增！北京连续17天无本地确诊病例 治愈出院1例最新数据显示：已连续7天无新增本土病例2月14日山东最新疫情通报\n刚刚，石家庄通报这些最新信息防疫访‘岗’”系列报道⑤严防输入，共盼春来这是二</p>"
-            break
-            case 3:
-                document.getElementById("li3").style.backgroundColor="brown"
-                document.getElementById("hr3").style.backgroundColor="black"
-                document.getElementById("click_text").innerHTML="" +
-                "<p class='text'>31省区市昨日本地确诊零新增，16例确诊为境外输入人民资讯发布时间：02-1608:32人民网人民科技官方帐号2月15日0—24时，31个省（自治区、直辖市）和新疆生产建设兵团报告新增确诊病例16例，均为境外输入病例（广东8例，上海5例，陕西2例，四川1例）；无新增死亡病例；无新增疑似病例。 当日新增治愈出院病例48例，解除医学观察的密切接触者828人，重症病例较前一日减少1例境外输入现有确诊病例234例（其中重症病例2例），现有疑似病例1例。累计确诊病例4885例，累计治愈出院病例4651例，无死亡病例。 截至2月15日24时，据31个省（自治区、直辖市）和新疆生产建设兵团报告，现有确诊病例605例（其中重症病例10例），累计治愈出院病例84547例，累计死亡病例4636例，累计报告确诊病例89788例，现有疑似病例1例。累计追踪到密切接触者974607人，尚在医学观察的密切接触者9643人。31个省（自治区、直辖市）和新疆生产建设兵团报告新增无症状感染者11例（均为境外输入）；当日转为确诊病例2例（均为境外输入）；当日解除医学观察18例（境外输入6例）；尚在医学观察无症状感染者387例（境外输入286例）累计收到港澳台地区通报确诊病例11773例。其中，香港特别行政区10788例（出院10207例，死亡193例），澳门特别行政区48例（出院46例），台湾地区937例（出院859例，死亡9例）。 评论列表向防疫抗疫工作人员致敬！ 这是新年最好的礼物，中国加油！很欣慰，大家辛苦了！太棒了，春暖花开希望一直保持下去,一个人异地过春节是真不太舒服!没有更多啦作者最新文章津味相声致敬白衣天使新年新愿景！一起来看新兵的新年愿望2种行为最容易惹上“节日病”相关文章零新增！北京连续17天无本地确诊病例 治愈出院1例最新数据显示：已连续7天无新增本土病例2月14日山东最新疫情通报\n刚刚，石家庄通报这些最新信息防疫访‘岗’”系列报道⑤严防输入，共盼春来这是三</p>"
-            break
-            case 4:
-                document.getElementById("li4").style.backgroundColor="brown"
-                document.getElementById("hr4").style.backgroundColor="black"
-                document.getElementById("click_text").innerHTML=""+
-                    "<p class='text'>four昨日本地确诊零新增，16例确诊为境外输入人民资讯发布时间：02-1608:32人民网人民科技官方帐号2月15日0—24时，31个省（自治区、直辖市）和新疆生产建设兵团报告新增确诊病例16例，均为境外输入病例（广东8例，上海5例，陕西2例，四川1例）；无新增死亡病例；无新增疑似病例。 当日新增治愈出院病例48例，解除医学观察的密切接触者828人，重症病例较前一日减少1例境外输入现有确诊病例234例（其中重症病例2例），现有疑似病例1例。累计确诊病例4885例，累计治愈出院病例4651例，无死亡病例。 截至2月15日24时，据31个省（自治区、直辖市）和新疆生产建设兵团报告，现有确诊病例605例（其中重症病例10例），累计治愈出院病例84547例，累计死亡病例4636例，累计报告确诊病例89788例，现有疑似病例1例。累计追踪到密切接触者974607人，尚在医学观察的密切接触者9643人。31个省（自治区、直辖市）和新疆生产建设兵团报告新增无症状感染者11例（均为境外输入）；当日转为确诊病例2例（均为境外输入）；当日解除医学观察18例（境外输入6例）；尚在医学观察无症状感染者387例（境外输入286例）累计收到港澳台地区通报确诊病例11773例。其中，香港特别行政区10788例（出院10207例，死亡193例），澳门特别行政区48例（出院46例），台湾地区937例（出院859例，死亡9例）。 评论列表向防疫抗疫工作人员致敬！ 这是新年最好的礼物，中国加油！很欣慰，大家辛苦了！太棒了，春暖花开希望一直保持下去,一个人异地过春节是真不太舒服!没有更多啦作者最新文章津味相声致敬白衣天使新年新愿景！一起来看新兵的新年愿望2种行为最容易惹上“节日病”相关文章零新增！北京连续17天无本地确诊病例 治愈出院1例最新数据显示：已连续7天无新增本土病例2月14日山东最新疫情通报\n刚刚，石家 </p>"
-            break
-        }
-    }
 </script>
 </body>
 </html>
