@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>这是标题</title>
-    <script src="https://unpkg.com/vue"></script>
+    <!--<script src="https://unpkg.com/vue"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <style>
         @font-face {
             font-family: hwxk;
@@ -172,6 +175,7 @@
         <hr/>
         <vue-text></vue-text>
     </div>
+</body>
 <script>
     const vueBar={
         data:function (){
@@ -184,10 +188,10 @@
                 bar_text:'2021年挑战杯红色专项活动'
             }
         },
-        template:'<div :class="div_bar_class">' +
-            '    <img :class="bar_img_class" :src="bar_img_src" :alt="bar_img_alt">' +
-            '    <div :class="bar_text_class">{{bar_text}}</div>' +
-            '</div>'
+        template:   '<div :class="div_bar_class">\
+                        <img :class="bar_img_class" :src="bar_img_src" :alt="bar_img_alt">\
+                        <div :class="bar_text_class">{{bar_text}}</div>\
+                     </div>'
     }
     const vueVideo={
         data:function (){
@@ -201,12 +205,12 @@
                 video_oncanplay:()=>{setTimeout(()=>this.video_is_canplay=true,1500)}
             }
         },
-        template:   '<div :class="div_video_class">' +
-            '    <div :class="div_loader_class" v-if="!video_is_canplay">' +
-            '    <div v-for="loader in loaders_class" :key="loader" :class="loader"></div>' +
-            '    </div>' +
-            '    <video :src="video_src" v-show="video_is_canplay" @canplay="video_oncanplay" preload="video_preload" controls></video>'+
-            '</div>'
+        template:   '<div :class="div_video_class">\
+                        <div :class="div_loader_class" v-if="!video_is_canplay">\
+                        <div v-for="loader in loaders_class" :key="loader" :class="loader"></div>\
+                        </div>\
+                        <video :src="video_src" v-show="video_is_canplay" @canplay="video_oncanplay" preload="video_preload" controls></video>\
+                    </div>'
     }
     const vueHeader={
         props:['header_text1','header_text2'],
@@ -217,9 +221,9 @@
                 header_img_alt:'failed'
             }
         },
-        template:'<div :class="header_class">\n' +
-            '    <img :src="header_img_src" :alt="header_img_alt"><span>{{header_text1}}</span>{{header_text2}}' +
-            '</div>',
+        template:   '<div :class="header_class">\
+                        <img :src="header_img_src" :alt="header_img_alt"><span>{{header_text1}}</span>{{header_text2}}\
+                    </div>',
     }
     const vueNavbar={
         data:function (){
@@ -232,24 +236,24 @@
                 },
                 div_navbar_class:'d_navbar',
                 tab_class:'tab',
-                tab_hr_class:'tab_hr',
+                tab_hr_class:['tab_hr','animate__animated','animate__zoomIn'],
                 tab_text:['sss1','sss2','sss3','sss4'],
                 current_tab:'sss1',
-                alt_text_class:'alt_text',
+                alt_text_class:['alt_text','animate__animated','animate__fadeIn'],
                 alt_text:{
-                    'sss1':'<p>111111111111111111111</p>',
-                    'sss2':'<p>2222222222222222222222222</p>',
-                    'sss3':'<p>333333333333333333333333333333</p>',
-                    'sss4':'<p>444444444444444444444444</p>',
+                    'sss1':'<p>1111111444444444Vue 在插入、更新或者移除 DOM 时，提供多种不同方式的应用过渡效果。包括以下工在 CSS 过渡和动画中自动应用 clas可以配合使用第三方 CSS 动画库，如 Animate.css\在过渡钩子函数中使用 JavaScript 直接操作 可以配合使用第三方 JavaScript 动画库，如 Velocity.js在这里，我们只会讲到进入、离开和列表的过渡，你也可以看下一节的 管理过渡状态。1、 单元素/组件的过渡\Vue 提供了 transition 的封装组件，在下列情形中，可以给任何元素和组件添加进入/离开过渡\条件渲染 (使用 v-if)条件展示 (使用 v-show)\动态组件组件根节点这里是一个典型的例子作者：满天繁星_28c5链接：https://www.jianshu.com/p/8b7fc040de04来源：简书著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。44444444444444411111111111111</p>',
+                    'sss2':'<p>222222221111111444444444Vue 在插入、更新或者移除 DOM 时，提供多种不同方式的应用过渡效果。包括以下工在 CSS 过渡和动画中自动应用 clas可以配合使用第三方 CSS 动画库，如 Animate.css\在过渡钩子函数中使用 JavaScript 直接操作 可以配合使用第三方 JavaScript 动画库，如 Velocity.js在这里，我们只会讲到进入、离开和列表的过渡，你也可以看下一节的 管理过渡状态。1、 单元素/组件的过渡\Vue 提供了 transition 的封装组件，在下列情形中，可以给任何元素和组件添加进入/离开过渡\条件渲染 (使用 v-if)条件展示 (使用 v-show)\动态组件组件根节点这里是一个典型的例子作者：满天繁星_28c5链接：https://www.jianshu.com/p/8b7fc040de04来源：简书著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。4444444444444441111111111111122222222222222222</p>',
+                    'sss3':'<p>33333331111111444444444Vue 在插入、更新或者移除 DOM 时，提供多种不同方式的应用过渡效果。包括以下工在 CSS 过渡和动画中自动应用 clas可以配合使用第三方 CSS 动画库，如 Animate.css\在过渡钩子函数中使用 JavaScript 直接操作 可以配合使用第三方 JavaScript 动画库，如 Velocity.js在这里，我们只会讲到进入、离开和列表的过渡，你也可以看下一节的 管理过渡状态。1、 单元素/组件的过渡\Vue 提供了 transition 的封装组件，在下列情形中，可以给任何元素和组件添加进入/离开过渡\条件渲染 (使用 v-if)条件展示 (使用 v-show)\动态组件组件根节点这里是一个典型的例子作者：满天繁星_28c5链接：https://www.jianshu.com/p/8b7fc040de04来源：简书著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。4444444444444441111111111111133333333333333333333333</p>',
+                    'sss4':'<p>444444444Vue 在插入、更新或者移除 DOM 时，提供多种不同方式的应用过渡效果。包括以下工在 CSS 过渡和动画中自动应用 clas可以配合使用第三方 CSS 动画库，如 Animate.css\在过渡钩子函数中使用 JavaScript 直接操作 可以配合使用第三方 JavaScript 动画库，如 Velocity.js在这里，我们只会讲到进入、离开和列表的过渡，你也可以看下一节的 管理过渡状态。1、 单元素/组件的过渡\Vue 提供了 transition 的封装组件，在下列情形中，可以给任何元素和组件添加进入/离开过渡\条件渲染 (使用 v-if)条件展示 (使用 v-show)\动态组件组件根节点这里是一个典型的例子作者：满天繁星_28c5链接：https://www.jianshu.com/p/8b7fc040de04来源：简书著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。444444444444444</p>',
                 }
             }
         },
-        template:'<div :style="vue_navbar_style">'+
-            '<div :class="div_navbar_class">' +
-            '    <div :class="[tab_class,{tab_active:current_tab===tab}]" @click="current_tab=tab" v-for="tab in tab_text" :key="tab" > {{tab}}<hr :class="[tab_hr_class,{tab_hr_active:current_tab===tab}]"/></div>' +
-            '</div>' +
-            '<div :class="alt_text_class" v-html="alt_text[current_tab]"></div>' +
-            '</div>',
+        template:'<div :style="vue_navbar_style">\
+                      <div :class="div_navbar_class">\
+                      <div :class="[tab_class,{tab_active:current_tab===tab}]" @click="current_tab=tab" v-for="tab in tab_text" :key="tab" > {{tab}}<hr :key="current_tab" :class="[tab_hr_class,{tab_hr_active:current_tab===tab}]"/></div>\
+                      </div>\
+                      <div :class="alt_text_class" :key="current_tab" v-html="alt_text[current_tab]"></div>\
+                  </div>',
     }
     const vueText={
         data:function (){
@@ -260,11 +264,11 @@
                 last_text:'<p>6666666</p>'
             }
         },
-        template:'<div :class="div_text_class">' +
-            '    <p v-html="first_text"></p>' +
-            '    <vue-navbar></vue-navbar>' +
-            '    <p v-html="last_text"></p> ' +
-            '</div>',
+        template:   '<div :class="div_text_class">\
+                        <p v-html="first_text"></p>\
+                        <vue-navbar></vue-navbar>\
+                        <p v-html="last_text"></p>\
+                     </div>',
         components:{'vue-navbar':vueNavbar},
     }
     new Vue({
@@ -277,5 +281,4 @@
         }
     })
 </script>
-</body>
 </html>
